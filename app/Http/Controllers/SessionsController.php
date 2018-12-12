@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\Auth;
 class SessionsController extends Controller
 {
     /*
+     * 设置访问权限，已登录用户不可以访问登录界面
+     */
+    public function __construct()
+    {
+        $this->middleware('guest', [
+            'only' => 'create'
+        ]);
+    }
+
+    /*
      * 显示登录
      */
     public function create()
@@ -29,7 +39,7 @@ class SessionsController extends Controller
         {
             session()->flash('success', '登陆成功！');
 
-            return redirect()->route('users.show', [Auth::user()]);
+            return redirect()->intended(route('users.show', [Auth::user()]));
         }
         else
         {
