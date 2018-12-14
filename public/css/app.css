@@ -4618,7 +4618,7 @@ tbody.collapse.in {
     text-decoration: none;
     background-color: transparent;
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     cursor: not-allowed;
 }
 
@@ -8673,5 +8673,11 @@ aside textarea {
 
 .status_form {
     margin-top: 20px;
+}
+
+.alert-status {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
 }
 
