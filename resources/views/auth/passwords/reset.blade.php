@@ -23,8 +23,8 @@
 
                         <div class="col-md-6">
                             <input id="email" type="email" name="email" class="form-control"
-                                   value="{{ $email or old('email') }}"
-                                   required>
+                                   value="{{ decrypt($email) }}"
+                                   readonly>
 
                             @if( $errors->has('email') )
                                 <span class="help-block">
